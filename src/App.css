@@ -93,3 +93,63 @@ h1, h2 {
 btn-submit:hover {
     background-color: #218838;
 }
+
+.navbar {
+    background-color: #343a40;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.navbar-links a {
+    color: #f8f9fa;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.navbar-links a:hover {
+    color: #17a2b8;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.customers-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.customers-table th, .customers-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.customers-table th {
+    background-color: #f8f9fa;
+    fontweight: 600;
+    color: #495057;
+    text-transform: uppercase;
+    font-size: 0.85em;
+}
+
+.customers-table tbody tr:hover {
+    background-color: #f1f3f5;
+    transition: background-color 0.2s ease;
+}

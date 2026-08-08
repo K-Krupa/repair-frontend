@@ -1,36 +1,31 @@
 import { useState } from 'react';
+import { createOrder } from '../api/ordersApi';
 
 export default function AddOrderForm({ onOrderAdded }) {
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [deviceId, setDeviceId] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault(); 
         
         const newOrder = {
-            description: description,
+            description,
             price: parseFloat(price),
             device: { id: parseInt(deviceId) }
         };
 
-        fetch('http://localhost:8080/api/orders', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newOrder)
-        })
-        .then(response => {
-            if (response.ok) {
-                onOrderAdded();
-                
-                setDescription('');
-                setPrice('');
-                setDeviceId('');
-            } else {
-                alert("Błąd podczas dodawania zlecenia.");
-            }
-        })
-        .catch(error => console.error("Błąd sieci:", error));
+        try {
+            await createOrder(newOrder);
+
+            onOrderAdded();
+            setDescription('');
+            setPrice('');
+            setDeviceId('');
+        } catch (error) {
+            console.error("Błąd sieci: ", error);
+            alert("Bląd podczas dodawania zlecenia.");
+        }
     };
 
     return (
