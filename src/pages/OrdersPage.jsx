@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import OrdersList from '../components/OrdersList';
 import AddOrderForm from '../components/AddOrderForm';
-import { fetchAllOrders, updateOrderStatus } from '../api/ordersApi';
+import { fetchAllOrders, updateOrderStatus } from '../api/apiClient';
 
 export default function OrdersPage() {
   const [orders, setOrders] = useState([]);
@@ -10,7 +10,8 @@ export default function OrdersPage() {
   const loadOrders = async () => {
     try {
         const data = await fetchAllOrders(); 
-        setOrders(data);
+        const sortedData = data.sort((a, b) => a.id - b.id);
+        setOrders(sortedData);
         setLoading(false);
     } catch (error) {
         console.error("Błąd:", error);
@@ -35,6 +36,8 @@ export default function OrdersPage() {
   return (
     <div>
       <AddOrderForm onOrderAdded={loadOrders} />   
+      <h2>Baza Zleceń</h2>
+      <p className="text-muted"> Poniżej znajduje się lista wszystkich zleceń zarejestrowanych w systemie.</p>
       {loading ? <p>Ładowanie zleceń...</p> : <OrdersList orders={orders} onStatusChange={handleStatusChange} />}
     </div>
   );

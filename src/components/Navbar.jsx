@@ -6,6 +6,7 @@ export default function Navbar() {
             <div className='navbar-brand'> SerwisApp </div>
             <div className='navbar-links'>
                 <Link to="/">Zlecenia</Link>
+                <Link to="/devices">Sprzęt</Link>
                 <Link to="/customers">Klienci</Link>
             </div>
         </nav>

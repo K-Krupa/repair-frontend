@@ -1,11 +1,11 @@
-export default function CustomersList({ customers }) {
+export default function CustomersList({ customers = []}) {
     if (customers.length === 0) {
         return <p>Brak klientów w bazie.</p>
     }
 
     return (
         <div className="table-responsive">
-            <table className="customers-table">
+            <table className="data-table">
                 <thead>
                     <tr>
                         <th>ID</th>
