@@ -1,16 +1,33 @@
-# React + Vite
+# 🛠️ Repair Service Management System - UI (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Kliencka część aplikacji (Frontend) służącej do zarządzania serwisem naprawczym. Zapewnia dynamiczny, responsywny interfejs użytkownika, który komunikuje się z backendem przy pomocy zapytań asynchronicznych.
 
-Currently, two official plugins are available:
+> ⚙️ **Kod serwerowy (Backend / Spring Boot) napędzający tę aplikację znajdziesz w repozytorium:** https://github.com/K-Krupa/repair-service
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Główne funkcjonalności
 
-## React Compiler
+*   **Dynamiczne formularze:** Zintegrowany system dodawania Klientów, Urządzeń i Zleceń z ujednoliconym klientem API (`apiClient.js`).
+*   **Zaawansowana obsługa błędów:** Wyłączenie domyślnej walidacji przeglądarki (`noValidate`) na rzecz precyzyjnego przechwytywania i wyświetlania błędów z backendu (HTTP 400 Bad Request) bezpośrednio pod odpowiednimi polami formularza.
+*   **Bezpieczeństwo danych:** Zabezpieczenie przed błędami typu `NaN` i wysyłaniem pustych referencji w przypadku relacyjnych obiektów, chroniące serwer przed niespodziewanymi wyjątkami.
+*   **Czysta architektura:** Separacja logiki komunikacji z serwerem od logiki widoku (UI).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 💻 Technologie
 
-## Expanding the ESLint configuration
+*   React.js
+*   Vite 
+*   Fetch API
+*   HTML5 / CSS3
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Uruchomienie lokalne
+
+1. Sklonuj repozytorium:
+   git clone https://github.com/K-Krupa/repair-frontend
+
+2. Przejdź do folderu z projektem i zainstaluj zależności:
+   npm install
+
+3. Uruchom serwer deweloperski:
+   npm run dev
+
+## 👨‍💻 Autor
+**Kacper Krupa**
